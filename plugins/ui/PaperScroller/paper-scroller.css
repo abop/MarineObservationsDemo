@@ -1,0 +1,18 @@
+.paper-scroller {
+   position: relative;
+   overflow: scroll;
+   cursor: move;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+   box-sizing: border-box;
+}
+
+.paper-scroller > .paper {
+    margin: 0;
+    position:relative;
+    display: inline-block;
+}
+
+.paper-scroller > .paper > svg {
+    display: block;
+}

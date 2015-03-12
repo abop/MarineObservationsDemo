@@ -1,0 +1,37 @@
+{
+  "name": "joint.ui.Halo",
+  "title": "JointJS Halo plugin",
+  "description": "JointJS Halo plugin - element tools.",
+  "keywords": [
+    "diagrams",
+    "flowcharts"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://jointjs.com",
+  "author": {
+    "name": "client IO",
+    "url": "http://client.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clientIO/JointJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clientIO/JointJS/issues"
+  },
+  "licenses": [
+    {
+      "type": "Rappid",
+      "url": "http://jointjs.com/license/rappid"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-contrib-handlebars": "~0.5.8",
+    "grunt-image-embed": "~0.3.1",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Real-time colaboration demo</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../../../ui/Halo/halo.css" />
+        <link rel="stylesheet" type="text/css" href="../../../ui/Stencil/stencil.css" />
+
+        <style>
+            .paper-holder {
+                border: 1px solid gray;
+                position: relative;
+                width: 300px;
+                height: 204px;
+                overflow: hidden;
+            }
+            .stencil-holder {
+                
+            }
+            .client {
+                width: 550px;
+                height: 230px;
+                float: left;
+                box-shadow: 0 0 5px gray;
+                overflow: hidden;
+                margin: 10px 10px;
+                padding: 30px;
+                padding-top: 10px;
+                position: relative;
+            }
+            .client > label {
+                display: block;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Even though this looks like things are happing on the same page, it is not the case. All
+            communication goes through the server (don't forget to run <code>node rt-server.js</code>).
+            Don't believe? Open another window <a href="rt.html" target="_blank">rt.html</a>.</p>
+
+        <div class="client">
+            <label>Room A</label>
+            <div id="stencil1" class="stencil-holder"></div>
+            <div id="paper1" class="paper-holder"></div>
+        </div>
+        <div class="client">
+            <label>Room A</label>
+            <div id="stencil2" class="stencil-holder"></div>
+            <div id="paper2" class="paper-holder"></div>
+        </div>
+        <div class="client">
+            <label>Room B</label>
+            <div id="stencil3" class="stencil-holder"></div>
+            <div id="paper3" class="paper-holder"></div>
+        </div>
+        <div class="client">
+            <label>Room B</label>
+            <div id="stencil4" class="stencil-holder"></div>
+            <div id="paper4" class="paper-holder"></div>
+        </div>
+
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../../dist/joint.ui.halo.js"></script>
+        <script src="../../../../dist/joint.ui.stencil.js"></script>
+        <script src="../joint.com.Channel.js"></script>
+
+        <script src="./rt-client.js"></script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+.dialog {
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+}
+
+.dialog .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: .5;
+    z-index: 10000;
+}
+
+.dialog .fg {
+    width: 80%;
+    margin: 0 auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.dialog.inlined .bg {
+    display: none;
+}
+
+.dialog:not(.modal) .bg {
+    display: none;
+}
+.dialog:not(.modal) .fg {
+    /* Make sure modal dialogs are always on top. */
+    z-index: 9999;
+}
+
+.dialog.inlined .fg {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+    z-index: auto;
+}
+
+.dialog .titlebar {
+    background-color: #7c68fc;
+    padding: 10px;
+    color: white;
+    text-shadow: 0 0 1px black;
+    text-rendering: optimizeLegibility;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 2px solid #dcddee;
+}
+
+.dialog[data-type="alert"] .titlebar {
+    background-color: #fe854f;
+}
+.dialog[data-type="warning"] .titlebar {
+    background-color: #feb663;
+}
+.dialog[data-type="success"] .titlebar {
+    background-color: #31d0c6;
+}
+.dialog[data-type="neutral"] .titlebar {
+    background-color: #efefef;
+    color: #696c8a;
+    text-shadow: none;
+}
+
+.dialog.draggable .titlebar {
+    cursor: move;
+   -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.dialog .titlebar.empty {
+    display: none;
+}
+
+.dialog .btn-close {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-family: Arial;
+    line-height: 1;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #3c4260;
+    cursor: pointer;
+    text-shadow: 0 0 1px white;
+    
+}
+
+.dialog .body {
+    padding: 10px;
+}
+
+.dialog .controls .control-button {
+    float: right;
+    line-height: 30px;
+    margin-left: 5px;
+    border: 1px solid #6A6C8B;
+    color: #6A6C8B;
+    background-color: transparent;
+    border-radius: 15px;
+    height: 30px;
+    padding: 0 15px;
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 10pt;
+    font-family: Helvetica Neue;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px;
+}
+.dialog .controls .control-button.left {
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.dialog .controls .control-button:hover {
+    background-color: #6A6C8B;
+    color: white;
+}

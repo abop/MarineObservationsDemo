@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sml:PhysicalSystem gml:id="top"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd">
+    
+  
+    <gml:name></gml:name>
+ 
+   
+    <sml:keywords>
+        <sml:KeywordList>
+            <sml:keyword>Oceanography</sml:keyword>
+            <sml:keyword>Meteorology</sml:keyword>
+            <sml:keyword>Observatory</sml:keyword>
+            <sml:keyword>Wind speed</sml:keyword>
+            <sml:keyword>Currents</sml:keyword>
+        </sml:KeywordList>
+    </sml:keywords>
+
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- 					Outputs 					                                                                        -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- list of actually available quantities in (as an example) the data a file:                                              -->
+    <!-- /home/coriolis_exp/spool/co01/co0134/co013407/co01340701/monthly/mooring/201410/MO_201410_TS_MO_61277.nc               -->
+    <!-- from outside IFREMER (login myocean):                                                                                  -->                
+    <!--ftp://vftp1.ifremer.fr/Core/INSITU_GLO_NRT_OBSERVATIONS_013_030/monthly/mooring/201410/MO_201410_TS_MO_61277.nc         -->
+    <!--The quantities are named after the netcdf variable name (PSAL, TEMP, ...)                                               -->
+    <!--CF standard names used as reference because it is close to the original description in data file.                       -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <sml:outputs>
+    	{{#custom}}
+        <sml:OutputList>
+             {{#output}}
+            <sml:output name="{{name}}" xlink:href="{{URI}}"/>
+             {{/output}}
+        </sml:OutputList>
+        {{/custom}}
+    </sml:outputs>
+    
+    
+
+  
+    
+    
+
+</sml:PhysicalSystem>
+
+

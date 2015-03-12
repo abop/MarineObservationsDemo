@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Free Transform Halo</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../freetransform.css" />
+
+        <style>
+	    body {
+	        -webkit-user-select: none;
+	        -moz-user-select: -moz-none;
+	        -khtml-user-select: none;
+	        -ms-user-select: none;
+	        user-select: none;
+	    }
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Try to click an element to bring up a Halo and try to resize it or rotate it.</p>
+
+        <div id="paper"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../../dist/joint.dia.freeTransform.js"></script>
+
+        <script src="../lib/handlebars.js"></script>
+        <script src="../dist/template.js"></script>
+        <script src="../joint.ui.FreeTransform.js"></script>
+
+        <script src="./index.js"></script>
+
+    </body>
+</html>

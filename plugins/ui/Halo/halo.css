@@ -1,0 +1,219 @@
+.halo {
+   position: absolute;
+   pointer-events: none;
+}
+
+.halo > div {
+   position: absolute;
+   pointer-events: auto;
+   width: 20px;
+   height: 20px;
+   background-size: 20px 20px;
+   background-repeat: no-repeat;
+   -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+.halo .handle {
+   cursor: pointer;
+}
+
+.halo.animate > div {
+   transition: background-size 80ms, width 80ms, height 80ms, top 150ms, left 150ms, bottom 150ms, right 150ms;
+}
+
+.halo.small > div {
+   width: 15px;
+   height: 15px;
+   background-size: 15px 15px;
+}
+
+.halo.tiny > div {
+   width: 10px;
+   height: 10px;
+   background-size: 10px 10px;
+}
+
+/* Positions */
+
+.halo .handle.se {
+   bottom: -25px;
+   right: -25px;
+}
+.halo.small .handle.se {
+   bottom: -19px;
+   right: -19px;
+}
+.halo.tiny .handle.se {
+   bottom: -13px;
+   right: -13px;
+}
+
+.halo .handle.nw {
+   top: -21px;
+   left: -25px;
+}
+.halo.small .handle.nw {
+   top: -19px;
+   left: -19px;
+}
+.halo.tiny .handle.nw {
+   top: -13px;
+   left: -13px;
+}
+
+.halo .handle.n {
+   top: -22px;
+   left: 50%;
+   margin-left: -10px;
+}
+.halo.small .handle.n {
+   top: -19px;
+   margin-left: -7.5px;
+}
+.halo.tiny .handle.n {
+   top: -13px;
+   margin-left: -5px;
+}
+
+.halo .handle.e {
+   right: -25px;
+   top: -webkit-calc(50% - 10px);
+   top: calc(50% - 10px);
+}
+.halo.small .handle.e {
+   right: -19px;
+   top: -webkit-calc(50% - 8px);
+   top: calc(50% - 8px);
+}
+.halo.tiny .handle.e {
+   right: -13px;
+   top: -webkit-calc(50% - 5px);
+   top: calc(50% - 5px);
+}
+
+.halo .handle.ne {
+   top: -21px;
+   right: -25px;
+}
+.halo.small .handle.ne {
+   top: -19px;
+   right: -19px;
+}
+.halo.tiny .handle.ne {
+   top: -13px;
+   right: -13px;
+}
+
+.halo .handle.w {
+   left: -25px;
+   top: 50%;
+   margin-top: -10px;
+}
+.halo.small .handle.w {
+   left: -19px;
+   margin-top: -8px;
+}
+.halo.tiny .handle.w {
+   left: -13px;
+   margin-top: -5px;
+}
+
+.halo .handle.sw {
+   bottom: -25px;
+   left: -25px;
+}
+.halo.small .handle.sw {
+   bottom: -19px;
+   left: -19px;
+}
+.halo.tiny .handle.sw {
+   bottom: -13px;
+   left: -13px;
+}
+
+.halo .handle.s {
+   bottom: -24px;
+   left: 50%;
+   margin-left: -10px;
+}
+.halo.small .handle.s {
+   bottom: -19px;
+   margin-left: -7.5px;
+}
+.halo.tiny .handle.s {
+   bottom: -13px;
+   margin-left: -5px;
+}
+
+
+/* Default handles. */
+
+.halo .resize {
+   cursor: se-resize;
+   background-image: url("images/resize.png");
+}
+.halo .remove {
+   cursor: pointer;
+   background-image: url("images/remove.png");
+}
+.halo .clone {
+   cursor: move;
+   background-image: url("images/clone.png");
+}
+.halo .link {
+   cursor: move;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+   background-image: url("images/link.png");
+}
+.halo .fork {
+   cursor: move;
+   background-image: url("images/fork.png");
+}
+.halo .unlink {
+   cursor: pointer;
+   background-image: url("images/unlink.png");
+}
+.halo .rotate {
+   cursor: move;
+   background-image: url("images/rotate.png");
+}
+
+.halo .box {
+   position: absolute;
+   top: 100%;
+   margin-top: 30px;
+   left: -20px;
+   right: -20px;
+   text-align: center;
+   color: white;
+   font-size: 10px;
+   line-height: 14px;
+   background-color: #1ABC9C;
+   border-radius: 6px;
+   padding: 6px;
+}
+
+.halo.small .box {
+   margin-top: 25px;
+}
+
+.halo.tiny .box {
+   margin-top: 20px;
+}
+
+.halo .link.halo-magnet {
+    opacity: 0.1;
+    transition: none;
+    /* halo magnets deprecated */
+    display: none;
+}
+
+.halo .link.halo-magnet:hover {
+    opacity: 1;
+}

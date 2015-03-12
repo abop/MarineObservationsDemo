@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Stencil</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../stencil.css" />
+
+        <style>
+            #paper, #paper2 {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+            #stencil, #stencil2 {
+               position: relative;
+               width: 200px;
+               height: 200px;
+               float: left;
+            }
+            .stencil > .content {
+               border: 1px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Drag an object from the stencil on the left to the paper.</p>
+
+        <h2>Plain Stencil</h2>
+
+        <div id="stencil"></div>
+        <div id="paper"></div>
+
+        <h2 style="clear: both">Stencil with groups</h2>
+
+        <div id="stencil2"></div>
+        <div id="paper2"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+
+        <script src="../lib/handlebars.js"></script>
+        <script src="../dist/template.js"></script>
+        <script src="../joint.ui.Stencil.js"></script>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

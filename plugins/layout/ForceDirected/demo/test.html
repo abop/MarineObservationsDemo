@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Force directed graph layout</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            .paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 600px;
+                height: 400px;
+                overflow: scroll;
+            }
+            .element.basic.Circle ellipse {
+                /* Webkit */
+                -webkit-svg-shadow: 2px 2px 5px black;
+               fill: #F1C40F;
+               -webkit-transform: scale(3);
+               -moz-transform: scale(3);
+            }
+            .link line {
+                opacity: .4;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button id="step">step</button>
+        <button id="animate">animate</button>
+        <div id="paper1" class="paper"></div>
+        <div id="paper2" class="paper"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+
+        <script src="../joint.layout.ForceDirected.js"></script>
+
+        <script src="./lightViews.js"></script>
+        <script src="./test.js"></script>
+
+    </body>
+</html>

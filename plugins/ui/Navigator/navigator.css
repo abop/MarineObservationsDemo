@@ -1,0 +1,47 @@
+.navigator {
+    overflow: hidden;
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    background-color: #ffffff;
+}
+
+.navigator > .paper {
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 0 2px lightgray;
+}
+
+.navigator > .paper > svg {
+    shape-rendering: optimizeSpeed;
+    pointer-events: none;
+}
+
+.navigator .current-view {
+    position: absolute;
+    cursor: move;
+    margin: -2px 0 0 -2px;
+    border: 2px solid #31d0c6;
+}
+
+.navigator .current-view-control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    cursor: nwse-resize;
+    margin: 0 -7px -7px 0;
+    border-radius: 50%;
+    border: 2px solid #31d0c6;
+    background-color: #ffffff;
+}
+
+.navigator .paper .element * {
+    vector-effect: initial;
+}

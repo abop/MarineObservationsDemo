@@ -1,0 +1,31 @@
+/*! Rappid - the diagramming toolkit
+
+Copyright (c) 2013 client IO
+
+ 2015-02-04 
+
+
+This Source Code Form is subject to the terms of the Rappid License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.paper-scroller {
+   position: relative;
+   overflow: scroll;
+   cursor: move;
+   cursor: -moz-grabbing;
+   cursor: -webkit-grabbing;
+   box-sizing: border-box;
+}
+
+.paper-scroller > .paper {
+    margin: 0;
+    position:relative;
+    display: inline-block;
+}
+
+.paper-scroller > .paper > svg {
+    display: block;
+}

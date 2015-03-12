@@ -1,0 +1,170 @@
+.stencil {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.stencil > .content {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.stencil.searchable > .content {
+    top: 30px;
+}
+
+.stencil .elements {
+   background-color: white;
+   height: 100%;
+   width: 100%;
+}
+
+/* This element is being dragged when a new element is about to be dropped into the main paper. */
+.stencil-paper-drag {
+   position: absolute;
+   z-index: 100;
+   width: 800;
+   height: 800;
+   top: -10000;
+   left: -10000;
+   display: none;
+}
+.stencil-paper-drag.dragging {
+   display: block;
+   opacity: .7;
+}
+
+.stencil .group {
+   overflow: hidden;
+   padding-left: 10px;
+   margin-bottom: 1px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   transition: max-height 400ms linear;
+   max-height: 400px;
+}
+.stencil .group.closed {
+   height: 26px;
+   max-height: 26px;
+}
+
+.stencil .group > .group-label {
+   padding: 5px 4px;
+   position: relative;
+   left: -10px;
+   margin-right: -20px;
+   margin-top: 0;
+   margin-bottom: 0;
+   font-size: 10px;
+   font-weight: 700;
+   text-transform: uppercase;
+   border-top: 1px solid #3a3a3a;
+   border-bottom: 2px solid #1f1f1f;
+   background: #242424;
+   cursor: pointer;
+   color: #bcbcbc;
+}
+.stencil .group > .group-label:before {
+   content: '';
+   width: 0;
+   height: 0;
+   display: inline-block;
+   margin-left: 2px;
+   margin-right: 5px;
+   position: relative;
+   top: 5px;
+   border-top: 5px solid white;
+   border-right: 5px solid transparent;
+   border-left: 5px solid transparent;
+   border-bottom: 5px solid transparent;
+}
+.stencil .group.closed > .group-label:before {
+   top: 2px;
+   left: 2px;
+   border-top: 5px solid transparent;
+   border-bottom: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-left: 5px solid white;
+}
+
+.stencil .element [magnet] {
+    pointer-events: none;
+}
+
+/* .group.unmatched and .element.unmatched */
+.stencil .unmatched {
+    opacity: 0.3;
+}
+
+.stencil .search {
+    width: 100%;
+    box-sizing: border-box;
+    text-shadow: 0 -1px 0 #000;
+    color: #ddd;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1),0px 0 0 1px rgba(255,255,255,0.1);
+    border: 1px solid black;
+    background: #333;
+    height: 30px;
+    max-height: 30px;
+    line-height: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Not found popover. */
+
+.stencil:after {
+    display: block;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    background: #242424;
+    color: #bcbcbc;
+    opacity: 0;
+    transition: top 100ms linear;
+}
+
+.stencil.not-found:after {
+    content: 'No matches found';
+    top: 30px;
+    opacity: 1;
+}
+
+/* By default, unmatched elements are hidden. See below for making them opaque isntead. */
+.stencil .element.unmatched {
+    display: none;
+}
+.stencil .group.unmatched {
+    display: none;
+}
+
+/* 
+Use the following in your custom CSS to make
+unmatched elements opaque instead of completely invisible which is the default.
+*/
+/*
+.stencil .element.unmatched {
+    display: block;
+}
+.stencil .group.unmatched {
+    display: block;
+}
+*/

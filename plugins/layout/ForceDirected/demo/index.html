@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Force directed graph layout</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
+                position: absolute;
+            }
+            .link line {
+                opacity: .4;
+            }
+            .element.basic.Circle text {
+               fill: gray;
+               font-size: 9px;
+               opacity: .7;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button id="step">step</button>
+        <button id="animate">animate</button>
+        <div id="paper"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+
+        <script src="../joint.layout.ForceDirected.js"></script>
+
+        <script src="./miserables.js"></script>
+        <script src="./lightViews.js"></script>
+        <script src="./index.js"></script>
+
+    </body>
+</html>

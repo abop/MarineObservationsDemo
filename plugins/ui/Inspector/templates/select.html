@@ -1,0 +1,6 @@
+<label>{{label}}:</label>
+<select class="select" data-type="{{type}}" data-attribute="{{attribute}}" value="{{value}}" {{#if options.multiple}} multiple size="{{options.options.length}}" {{/if}}>
+    {{#each options.items}}
+    <option value="{{this.value}}" {{#is-or-contains this.value ../value}} selected {{/is-or-contains}}>{{this.content}}</option>
+    {{/each}}
+</select>

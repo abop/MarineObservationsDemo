@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Resize (width/height) development</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../../../ui/Halo/halo.css" />
+
+        <style>
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Play with the elements little bit and then apply undo and redo</p>
+        <button onclick="commandManager.undo();">Undo</button>
+        <button onclick="commandManager.redo();">Redo</button>
+
+        <div id="paper"></div>
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../../dist/joint.dia.freeTransform.js"></script>
+        <script src="../../../../dist/joint.shapes.devs.js"></script>
+        <script src="../../../ui/Halo/lib/handlebars.js"></script>
+        <script src="../../../ui/Halo/dist/template.js"></script>
+        <script src="../../../ui/Halo/joint.ui.Halo.js"></script>
+        <script src="../joint.dia.command.js"></script>
+        <script src="../../../ui/Halo/demo/index.js"></script>
+        <script src="./index.js"></script>
+
+    </body>
+</html>

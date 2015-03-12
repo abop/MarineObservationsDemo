@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Tree graph layout</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
+                position: absolute;
+            }
+            #console {
+                position: absolute;
+            }
+            .link {
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="paper"></div>
+        <div id="console"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+
+        <script src="../joint.layout.TreeLayout.js"></script>
+        <script src="./bigjson.js"></script>
+        <script src="./big.js"></script>
+
+    </body>
+</html>

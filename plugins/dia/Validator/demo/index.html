@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Halo</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../../../ui/Halo/halo.css" />
+
+        <style>
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+	    .halo .rotate, .halo .resize {
+	        display: none;
+	    }
+        </style>
+    </head>
+    <body>
+
+        <p>Try to link, clone and fork objects through halo functions</p>
+	<p>Validator message: <span id="message" style="color: red"/></p>
+        <div id="paper"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../ui/Halo/lib/handlebars.js"></script>
+        <script src="../../../ui/Halo/dist/template.js"></script>
+        <script src="../../../ui/Halo/joint.ui.Halo.js"></script>
+        <script src="../../../dia/Command/joint.dia.command.js"></script>
+        <script src="../joint.dia.validator.js"></script>
+        <script src="../../../ui/Halo/demo/index.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>

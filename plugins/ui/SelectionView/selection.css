@@ -1,0 +1,128 @@
+.selection {
+   position: absolute;
+   background-color: #3498DB;
+   opacity: .3;
+   border: 2px solid #2980B9;
+   overflow: visible;
+}
+
+.selection.selected {
+   background-color: transparent;
+   border: none;
+   opacity: 1;
+   cursor: move;
+   /* Position the selection rectangle static so that the selection-box's are contained within
+     the paper container (which is supposed to be positioned relative). The height 0 !important
+     makes sure the selection rectangle is not-visible, only the selection-boxes inside it (thanks to overflow: visible). */
+   position: static;
+   height: 0 !important;
+}
+
+.selection-box {
+   position: absolute;
+   border: 2px dashed #F39C12;
+   padding-right: 5px;
+   padding-bottom: 5px;
+   margin-top: -4px;
+   margin-left: -4px;
+   box-sizing: content-box;
+   box-shadow: 2px 2px 5px lightgray;
+}
+
+.selection-wrapper {
+    position: absolute;
+    border: 2px solid #F39C12;
+    box-shadow: 2px 2px 5px lightgray;
+    margin-left: -6px;
+    margin-top: -6px;
+    padding-right: 9px;
+    padding-bottom: 9px;
+    pointer-events: none;
+}
+/* If there is zero or only one element selected, we hide the
+   selection wrapper by default. */
+.selection-wrapper[data-selection-length="0"],
+.selection-wrapper[data-selection-length="1"] {
+    display: none;
+}
+
+.selection .box {
+   position: absolute;
+   top: 100%;
+   margin-top: 30px;
+   left: -20px;
+   right: -20px;
+   text-align: center;
+   color: white;
+   font-size: 10px;
+   line-height: 14px;
+   background-color: #1ABC9C;
+   border-radius: 6px;
+   padding: 6px;
+}
+
+/* Handle Positions */
+
+.selection .handle.se {
+   bottom: -25px;
+   right: -25px;
+}
+.selection .handle.nw {
+   top: -21px;
+   left: -25px;
+}
+.selection .handle.n {
+   top: -22px;
+   left: 50%;
+   margin-left: -10px;
+}
+.selection .handle.e {
+   right: -25px;
+   top: -webkit-calc(50% - 10px);
+   top: calc(50% - 10px);
+}
+.selection .handle.ne {
+   top: -21px;
+   right: -25px;
+}
+.selection .handle.w {
+   left: -25px;
+   top: 50%;
+   margin-top: -10px;
+}
+.selection .handle.sw {
+   bottom: -25px;
+   left: -25px;
+}
+.selection .handle.s {
+   bottom: -24px;
+   left: 50%;
+   margin-left: -10px;
+}
+
+/* Default handles. */
+
+.selection .handle {
+   position: absolute;
+   pointer-events: auto;
+   width: 20px;
+   height: 20px;
+   background-size: 20px 20px;
+   background-repeat: no-repeat;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   -webkit-user-drag: none;
+   user-drag: none;
+   cursor: pointer;
+}
+
+.selection .remove {
+   cursor: pointer;
+   background-image: url("images/remove.png");
+}
+.selection .rotate {
+   cursor: move;
+   background-image: url("images/rotate.png");
+}

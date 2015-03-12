@@ -1,0 +1,57 @@
+@media print {
+
+    @page {
+        margin: 5mm;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body:before {
+        content: 'JointJS';
+        font-size: 15mm;
+        position: absolute;
+        top: 5mm;
+        right: 5mm;
+        z-index: 100000;
+    }
+
+    /* Do not display the above for foreign object bodies */
+    .fobj > body:before {
+        display: none;
+    }
+
+    .printarea {
+        left: 0 !important;
+        top: 0 !important;
+        background: none !important;
+        border: none !important;
+        margin: 0mm !important;
+        padding: 0mm !important;
+        overflow: visible !important;
+        z-index: 99999;
+    }
+
+    .printarea > *:not(svg) {
+        display: none;
+    }
+}
+
+@media print and (orientation:landscape) {
+
+    .printarea.a4 {
+        width: 270mm !important;
+        height: 168mm !important;
+    }
+
+}
+
+@media print and (orientation:portrait) {
+
+    .printarea.a4 {
+        width: 200mm !important;
+        height: 232mm !important;
+    }
+}

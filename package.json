@@ -1,0 +1,34 @@
+{
+  "name": "rappid",
+  "title": "Rappid",
+  "description": "HTML 5 diagramming toolkit",
+  "keywords": [
+    "diagram",
+    "flowchart",
+    "graph",
+    "visualization"
+  ],
+  "version": "1.5.0",
+  "homepage": "http://jointjs.com/about-rappid",
+  "author": {
+    "name": "client IO",
+    "url": "http://client.io"
+  },
+  "repository": {
+  },
+  "bugs": {
+    "url": "https://github.com/clientIO/JointJS_Plus/issues"
+  },
+  "licenses": [
+    {
+      "type": "Rappid v2.0",
+      "url": "http://jointjs.com/license/rappid_v2.txt"
+    }
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "lodash": "~2.2.1"
+  },
+  "devDependencies": {
+  }
+}

@@ -1,0 +1,62 @@
+.text-editor {
+    margin: 0;
+    padding: 0;
+}
+
+@-webkit-keyframes text-editor-caret-blink {
+    0%   { opacity: 1 }
+    100%  { opacity: 0 }
+}
+@-moz-keyframes text-editor-caret-blink {
+    0%   { opacity: 1 }
+    100%  { opacity: 0 }
+}
+@-ms-keyframes text-editor-caret-blink {
+    0%   { opacity: 1 }
+    100%  { opacity: 0 }
+}
+@keyframes text-editor-caret-blink {
+    0%   { opacity: 1 }
+    100%  { opacity: 0 }
+}
+
+.text-editor .caret {
+    position: absolute;
+    width: 1px;
+    height: 15px;
+/*    background-color: #3498DB; */
+    background-color: black;
+    margin-left: -1px;
+    margin-top: 2px;
+    -webkit-animation: text-editor-caret-blink 1s linear 0s infinite;
+    -moz-animation: text-editor-caret-blink 1s linear 0s infinite;
+    -ms-animation: text-editor-caret-blink 1s linear 0s infinite;
+    animation: text-editor-caret-blink 1s linear 0s infinite;
+    pointer-events: none;
+}
+.text-editor .char-selection-box {
+    position: absolute;
+    background-color: #afd5ff;
+    opacity: .8;
+/*    border: 1px solid black; */
+    padding: 0;
+    margin: 0;
+    margin-top: 2px;
+    pointer-events: none;
+}
+
+.text-editor .char-selection-box:hover {
+    cursor: text;
+}
+
+.text-editor .textarea-container {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+}
+
+.text-editor textarea {
+    width: 1000px;
+    height: 1em;
+    outline: none;
+}

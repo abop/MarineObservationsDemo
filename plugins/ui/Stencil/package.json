@@ -1,0 +1,36 @@
+{
+  "name": "joint.ui.Stencil",
+  "title": "JointJS Stencil plugin",
+  "description": "JointJS Stencil plugin - element palette.",
+  "keywords": [
+    "diagrams",
+    "flowcharts"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://jointjs.com",
+  "author": {
+    "name": "client IO",
+    "url": "http://client.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clientIO/JointJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clientIO/JointJS/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/clientIO/JointJS/blob/master/MIT-LICENSE.txt"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-contrib-handlebars": "~0.5.8"
+  }
+}

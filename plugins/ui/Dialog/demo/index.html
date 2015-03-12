@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8"/>
+
+    <title>Dialog</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+    <link rel="stylesheet" type="text/css" href="../dialog.css" />
+
+    <style>
+      #dialogs-inlined .dialog {
+          margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <a id="btn-open-yes-no" href="#">Open Yes/No Dialog</a> <br/>
+    <a id="btn-open-video" href="#">Open Dialog with an embedded video</a> <br/>
+    <a id="btn-open-draggable" href="#">Draggable Dialog</a> <br/>
+    <a id="btn-open-paper" href="#">Dialog with a diagram</a> <br/>
+    <a id="btn-open-position" href="#">Dialog with buttons left and right</a> <br/>
+    <a id="btn-open-notitle-nobuttons" href="#">Dialog with no title and no buttons</a> <br/>
+    <a id="btn-open-alert" href="#">Alert Dialog</a> <br/>
+    <a id="btn-open-nomodal" href="#">No Modal Dialog</a>
+
+    <h3>Inlined dialogs</h3>
+    <div id="dialogs-inlined"></div>
+
+    <script src="../../../../dist/joint.js"></script>
+    <script src="../joint.ui.Dialog.js"></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

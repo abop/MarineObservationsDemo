@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>SelectionView</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../selection.css" />
+
+        <style>
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+	    
+	    .btn-selection-rotate {
+	        width: 20px;
+	        height: 20px;
+	        background-color: green;
+	        position: absolute;
+	    }
+        </style>
+    </head>
+    <body>
+
+        <p>Try selecting group of elements. Also, selecting/deselecting individual elements by clicking them and holding Ctrl or Command (on OS X).</p>
+
+        <div id="paper"></div>
+
+        <p id="selection"></p>
+
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../joint.ui.SelectionView.js"></script>
+        <script src="./index.js"></script>
+
+    </body>
+</html>

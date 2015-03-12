@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Inspector</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.ui.halo.css" />
+        <link rel="stylesheet" type="text/css" href="../inspector.css" />
+
+        <style>
+            #paper {
+                border: 1px solid gray;
+                float: left;
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+            }
+            .inspector-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 240px;
+                background-color: #333;
+                color: #bcbcbc;
+            }
+            .inspector .list[data-attribute="labels"] .object-property[data-property="position"] label,
+            .inspector .list[data-attribute="labels"] .object-property[data-property="attrs/text/text"] label {
+                display: inline-block;
+                line-height: 20px;
+                width: 50px;
+            }
+            .inspector .list[data-attribute="labels"] .object-property[data-property="position"] input,
+            .inspector .list[data-attribute="labels"] .object-property[data-property="attrs/text/text"] input {
+                width: 135px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <p>Try to click an element or link option tool to bring up an Inspector.</p>
+
+        <div id="paper"></div>
+        <div class="inspector-container"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+
+        <script src="../lib/handlebars.js"></script>
+        <script src="../dist/template.js"></script>
+        <script src="../helpers.js"></script>
+        <script src="../joint.ui.Inspector.js"></script>
+
+        <script src="../../../../dist/joint.ui.halo.js"></script>
+
+        <script src="../../../../plugins/joint.shapes.devs.js"></script>
+
+        <script src="./defs.js"></script>
+        <script src="./index.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Dijkstra Shortest Path</title>
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+
+        <style>
+            html, body { 
+                margin: 0; padding: 0; 
+                font-family: Arial;
+            }
+            #paper {
+                margin: 30px auto;
+                width: 800px;
+                display: block;
+                position: relative;
+                border: 1px solid lightgray;
+            }
+            #path {
+                margin: 35px auto;
+                width: 800px;
+                display: block;
+                position: absolute;
+                padding-left: 10px;
+                left: 0;
+                right: 0;
+            }
+            #options {
+               display: block;
+               margin-left: 280px;
+               margin-top: 22px;
+               font-size: 13px;
+            }
+            #edit-mode-help {
+              display: none;
+              color: gray;
+            }
+            #opt-edit:checked + #edit-mode-help {
+               display: inline;
+            }
+            #header {
+               height: 50px;
+               background-color: #F6F6F6;
+               color: #696c8a;
+               text-align: center;
+            }
+            #header h1 {
+               margin: 0;
+               padding: 0;
+               display: inline-block;
+               line-height: 50px;
+               margin-left: 20px;
+               font-size: 14px;
+               float: left;
+           }
+           #header p {
+               display: inline-block;
+               font-size: 12px;
+               line-height: 50px;
+               margin: 0;
+               padding: 0;
+           }
+           #header a {
+               float: right;
+               margin-right: 10px;
+               line-height: 50px;
+               font-weight: bold;
+               color: inherit;
+               text-decoration: none;
+           }
+           #header img {
+               max-height: 30px;
+               float: right;
+               margin-top: 10px;
+               margin-right: 10px;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+          <h1>Dijkstra's shortest path algorithm</h1>
+          <p>Click a node and hover over another one to see the shortest path between them.</p>
+          <a href="http://jointjs.com">JointJS</a>
+          <img src="http://jointjs.com/images/logo.png" />
+        </div>
+        <div id="options">
+          <label>Directed graph<input type="checkbox" id="opt-directed"/></label>
+          <label>Edit mode<input type="checkbox" id="opt-edit"/>
+            <p id="edit-mode-help">
+              Double-click a blank paper area to create new nodes.
+              Drag the text of nodes to create new edges.
+            </p>
+          </label>
+        </div>
+        <pre id="path"></pre>
+        <div id="paper"></div>
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../../plugins/alg/joint.alg.PriorityQueue.js"></script>
+        <script src="../../../../plugins/alg/joint.alg.Dijkstra.js"></script>
+        <script src="../joint.dia.GraphUtils.js"></script>
+
+        <script src="./dijkstra.js"></script>
+
+    </body>
+</html>

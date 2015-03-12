@@ -1,0 +1,37 @@
+/*! Rappid - the diagramming toolkit
+
+Copyright (c) 2013 client IO
+
+ 2015-02-04 
+
+
+This Source Code Form is subject to the terms of the Rappid License
+, v. 2.0. If a copy of the Rappid License was not distributed with this
+file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
+ or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
+
+
+.snaplines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.snapline {
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.snapline.horizontal {
+    width: 100%;
+    border-bottom: 1px solid #2ECC71;
+}
+
+.snapline.vertical {
+    height: 100%;
+    border-right: 1px solid #2ECC71;
+}

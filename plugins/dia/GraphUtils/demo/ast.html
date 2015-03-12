@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+
+        <title>JavaScript AST visualizer</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.ui.tooltip.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../dist/joint.ui.paperScroller.css" />
+
+        <link rel="stylesheet" type="text/css" href="./lib/codemirror.css" />
+
+        <link rel="stylesheet" type="text/css" href="./ast.css" />
+    </head>
+    <body>
+
+        <h1>JavaScript AST visualizer</h1>
+	<p>Display <a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>
+	  of a JavaScript program. 
+	  <br/>
+	  This tool uses <a href="http://esprima.org/">Esprima</a> parser to parse
+	  the JavaScript code and displays it via <a href="http://jointjs.com">JointJS/Rappid</a> diagramming framework.</p>
+
+	<script type="text/program" id="program-y-combinator">
+var Y = function (F) {
+  return (function (x) {
+    return F(function (y) { return x(x)(y); });
+  })(function (x) {
+    return F(function (y) { return x(x)(y); });
+  });
+};
+
+var factorial = function (self) {
+  return function(n) {
+    return n === 0 ? 1 : n * self(n-1);
+  };
+};
+
+var result;
+console.log(result = Y(factorial)(4));
+	</script>
+
+	<script type="text/program" id="program-basic">
+var a = 42;
+var b = 5;
+var c = a + b;
+	</script>
+
+	<script type="text/program" id="program-function">
+var a = 42;
+var b = 5;
+function addA(d) {
+    return a + d;
+}
+var c = addA(2) + b;
+	</script>
+
+	<script type="text/program" id="program-foreach">
+Array.prototype.forEach = function (callback, thisArg) {
+
+    var T, k;
+
+    if (this == null) {
+      throw new TypeError(" this is null or not defined");
+    }
+
+    // 1. Let O be the result of calling ToObject passing the |this| value as the argument.
+    var O = Object(this);
+
+    // 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".
+    // 3. Let len be ToUint32(lenValue).
+    var len = O.length >>> 0;
+
+    // 4. If IsCallable(callback) is false, throw a TypeError exception.
+    // See: http://es5.github.com/#x9.11
+    if (typeof callback !== "function") {
+      throw new TypeError(callback + " is not a function");
+    }
+
+    // 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
+    if (arguments.length > 1) {
+      T = thisArg;
+    }
+
+    // 6. Let k be 0
+    k = 0;
+
+    // 7. Repeat, while k < len
+    while (k < len) {
+
+      var kValue;
+
+      // a. Let Pk be ToString(k).
+      //   This is implicit for LHS operands of the in operator
+      // b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
+      //   This step can be combined with c
+      // c. If kPresent is true, then
+      if (k in O) {
+
+        // i. Let kValue be the result of calling the Get internal method of O with argument Pk.
+        kValue = O[k];
+
+        // ii. Call the Call internal method of callback with T as the this value and
+        // argument list containing kValue, k, and O.
+        callback.call(T, kValue, k, O);
+      }
+      // d. Increase k by 1.
+      k++;
+    }
+    // 8. return undefined
+  };
+</script>
+
+	<select id="select-program">
+	  <option value="function">Function</option>
+	  <option value="basic">Basic</option>
+	  <option value="y-combinator">Y Combinator</option>
+	  <option value="foreach">forEach polyfill</option>
+	</select>
+	<br/>
+	<br/>
+	<textarea id="program"></textarea>
+
+	<div id="stats">
+	  <label># of nodes:</label><span class="stats-n-nodes"></span><br/>
+	  <label># of tokens:</label><span class="stats-n-tokens"></span><br/>
+	  <label>Tokens:</label><ul class="stats-tokens"></ul>
+	</div>
+
+	<br/>
+	<button class="btn" id="btn-clear">Clear</button>
+	<button class="btn" id="btn-visualize">Show AST</button>
+	<div class="toggle toggle-layout-direction">
+	  <input type="checkbox" checked />
+	  <span><i></i></span>
+	</div>
+	<br class="clear"/>
+
+	<button class="btn-icon" id="btn-export-svg"><img src="./images/svg.png" />to SVG</button>
+	<button class="btn-icon" id="btn-export-png"><img src="./images/raster.png" />to PNG</button>
+
+        <div id="paper"></div>
+
+        <script src="../../../../dist/joint.js"></script>
+        <script src="../../../../dist/joint.layout.DirectedGraph.js"></script>
+        <script src="../../../../dist/joint.ui.paperScroller.js"></script>
+        <script src="../../../../dist/joint.ui.tooltip.js"></script>
+        <script src="../../../../dist/joint.format.svg.js"></script>
+        <script src="../../../../dist/joint.format.raster.js"></script>
+        <script src="../joint.dia.GraphUtils.js"></script>
+
+        <script src="./lib/esprima.js"></script>
+        <script src="./lib/codemirror-compressed.js"></script>
+
+        <script src="./ast.js"></script>
+
+    </body>
+</html>

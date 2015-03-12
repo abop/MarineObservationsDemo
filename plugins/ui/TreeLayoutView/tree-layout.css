@@ -1,0 +1,51 @@
+.tree-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.tree-layout-box {
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    border-width: 2px;
+    border-color: blue;
+    border-radius: 4px;
+    background-color: rgba(0,0,255,0.1);
+    margin: -2px 0 0 -2px;
+}
+
+.tree-layout-box.active {
+    border-style: solid;
+}
+
+.tree-layout-box.translate {
+    border-style: dotted;
+}
+
+.tree-layout-preview {
+    stroke: blue;
+    fill: none;
+    stroke-width: 2;
+}
+
+.tree-layout-preview.child {
+    fill: rgba(0,0,255,0.1);
+}
+
+.tree-layout-preview.link {
+    fill: none;
+}
+
+.tree-layout-preview.parent {
+    fill: rgba(0,0,255,0.1);
+}
+
+.tree-layout-callout-line {
+    fill: none;
+    stroke-width: 2;
+    stroke: rgba(255,0,0,0.5);
+}
